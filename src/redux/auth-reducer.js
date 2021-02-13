@@ -36,7 +36,7 @@ export const signup = (email, first_name, last_name, password, re_password ) => 
             }
             const body = JSON.stringify({ email, first_name, last_name,  password, re_password });
 
-            const res = await axios.post(`http://185.146.3.44/api/v1/auth/moderators/`, body, config)
+            const res = await axios.post(`https://e-men.kz/api/v1/auth/moderators/`, body, config)
             console.log(res);
 
             dispatch({ type: SIGN_UP_SUCCESS });
