@@ -9,7 +9,7 @@ const Modal = () => {
                 <div className = {cls.modal__text} >
                     Вы успешно зарегистрировались. Теперь вы можете перейти на страницу администратора. Удачи в работе :)
                 </div>
-                <a href="http://185.146.3.44/admin/"> <button className = {cls.success}> Войти </button> </a>
+                <a href="https://e-men.kz/admin/"> <button className = {cls.success}> Войти </button> </a>
             </div>
         </div>
     )
