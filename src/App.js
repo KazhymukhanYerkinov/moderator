@@ -8,6 +8,7 @@ import { signup } from './redux/auth-reducer';
 
 import './App.css';
 import { textRequired, emailRequired, LengthCreator,passwordRequired } from './validators/validation';
+import { MyFormik } from './MyFormik';
 
 
 
@@ -38,6 +39,7 @@ class App extends React.Component {
     function onSubmit(formData) {
       signup(formData.email, formData.name, formData.surname, formData.password1, formData.password2)
       
+      
     }
 
     return (
@@ -45,7 +47,7 @@ class App extends React.Component {
         <div className="wrapper__inner">
 
           <div className="title"> Регистрация </div>
-          <AppReduxForm onSubmit = { onSubmit }/>
+          <MyFormik signup = { signup }/>
           
         </div>
         {isOpen && <Modal />}

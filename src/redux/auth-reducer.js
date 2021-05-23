@@ -28,7 +28,7 @@ const authReducer = (state = initialState, action) => {
 
 
 
-export const signup = (email, first_name, last_name, password, re_password ) => async (dispatch) => {
+export const signup = (email, first_name, last_name, password, re_password, actions ) => async (dispatch) => {
     if ( password === re_password ) {
         try {
             const config = {
@@ -43,11 +43,10 @@ export const signup = (email, first_name, last_name, password, re_password ) => 
 
         } catch (err) {
             dispatch({ type: SIGN_UP_FAIL });
-            dispatch(stopSubmit('app', { _error: "Такой адрес электронной почты уже существует. Пожалуйста, введите другой адрес электронной почты." }))
+            actions.setFieldError('global_error', 'Email error');
             
         }
     } else {
-        console.log('HERE');
         dispatch(stopSubmit('app', {'password2': 'Пароли не совпадают'}))
     }
 }
